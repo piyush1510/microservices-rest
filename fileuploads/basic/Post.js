@@ -4,26 +4,26 @@ class Post {
     constructor(title, dsc, file) {
         this.title=title
         this.dsc = dsc
-        this.file = file
+        this.fileName = file
     }
     validate(){
-        if(!this.title || !this.dsc) return false;
+        if(!this.title || !this.dsc || !this.fileName) return false;
         return true;
     }
-    static findOne(email){
-        return db.execute(`
-        select * from auth
-        where
-        email=?
-        `,[email])
-    }
+    // static findOne(email){
+    //     return db.execute(`
+    //     select * from auth
+    //     where
+    //     email=?
+    //     `,[email])
+    // }
     save(){
         return db.execute(`
-        insert into auth
-        (name, email, password, roll)
+        insert into posts
+        (title, dsc, file_name)
         values
-        (?,?,?,?)
-        `,[this.name,this.email,this.password,this.roll])
+        (?,?,?)
+        `,[this.title,this.dsc,this.fileName])
     }
 
 }

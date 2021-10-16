@@ -1,8 +1,8 @@
 require('dotenv').config()
-
 const express = require('express');
 const controller = require('./controller')
 const db = require('./db')
+const upload = require('./upload')
 
 
 const app = express();
@@ -10,7 +10,7 @@ app
     .use(express.json())
     .get('/page/:page',controller.getAll)
     .get('/get-one/:id',controller.getOne)
-    .post('/',controller.createOne)
+    .post('/',upload.single('img'),controller.createOne)
     .use(controller.error404)
     .use(controller.error500)
     .use(express.static(__dirname + '/public'))
