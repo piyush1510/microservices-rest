@@ -1,0 +1,17 @@
+{
+  "name": "busboy",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "piyush verma",
+  "license": "MIT",
+  "dependencies": {
+    "busboy": "^0.3.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.2"
+  },
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  }
+}
