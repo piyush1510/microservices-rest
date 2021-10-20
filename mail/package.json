@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemailer": "^6.7.0"
+  },
+  "scripts": {
+    "start": "node app",
+    "dev":"nodemon app"
+  },
+  "name": "mail",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT"
+}
