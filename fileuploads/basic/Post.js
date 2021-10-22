@@ -10,13 +10,13 @@ class Post {
         if(!this.title || !this.dsc || !this.fileName) return false;
         return true;
     }
-    // static findOne(email){
-    //     return db.execute(`
-    //     select * from auth
-    //     where
-    //     email=?
-    //     `,[email])
-    // }
+    static findOne(id){
+        return db.execute(`
+        select * from posts
+        where
+        id=?
+        `,[id])
+    }
     save(){
         return db.execute(`
         insert into posts

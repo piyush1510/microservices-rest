@@ -13,7 +13,11 @@ exports.createOne = (req, res) => {
   
 };
 exports.getOne = (req, res) => {
-  res.json("get one");
+  Post.findOne(req.params.id).then(([data,_])=>{
+    res.json(data);
+  }).catch(err=>{
+    res.sendStatus(404);
+  })
 };
 exports.getAll = (req, res) => {
   res.json("get All");

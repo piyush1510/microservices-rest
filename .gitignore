@@ -1,1 +1,2 @@
-auth/jwt/node_modules
+**/node_modules
+**/public

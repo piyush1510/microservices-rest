@@ -2,20 +2,20 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 
 const transport = nodemailer.createTransport({
-    service:"",
+    service:"gmail",
     // port:465,
     secure:true,
     auth:{
-        user:"",
-        pass:""
+        user:"gmail email",
+        pass:"gmail password"
     }
 })
 
 const options = {
-    from:"",
-    to:"",
-    subject:"",
-    Text:""
+    from:"some name",
+    to:"receipent",
+    subject:"---",
+    text:"----"   // or html
 }
 
 transport.sendMail(options,(err,info)=>{
